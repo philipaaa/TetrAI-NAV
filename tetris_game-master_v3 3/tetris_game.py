@@ -6,7 +6,6 @@ from PyQt5.QtGui import QPainter, QColor, QFont
 from tetris_model import BOARD_DATA, Shape
 from tetris_ai import TETRIS_AI
 
-#TETRIS_AI = None
 AIplaying = True
 
 class Tetris(QMainWindow):
@@ -96,7 +95,6 @@ class Tetris(QMainWindow):
         y = 0
         while BOARD_DATA.tryMove(shape, direction, x, y + 1):
             y += 1
-        #print(f"Calculated drop position: X={x}, Y={y}, Direction={direction}")
         return y
 
     def timerEvent(self, event):
@@ -105,7 +103,6 @@ class Tetris(QMainWindow):
                 self.timer.stop()
                 return
 
-            #if TETRIS_AI and not self.nextMove:
             if not self.nextMove:
                 self.nextMove = TETRIS_AI.nextMove()
                 BOARD_DATA.highlightShape = BOARD_DATA.currentShape
@@ -388,7 +385,9 @@ def drawSquare(painter, x, y, val, s, highlight):
     if val == 0:
         return
 
+    #for different colour blocks
     #color = QColor(colorTable[val])
+    #Making all blocks white
     color = QColor(0xFFFFFF)
     if highlight == "best":
         color.setAlpha(80)  # Make the highlight translucent

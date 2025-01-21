@@ -1,4 +1,6 @@
-TetrAI Nav
+** TetrAI Nav **
+
+
 
 TetrAI Nav is an innovative project developed for the NAV Canada Hackathon Challenge. Combining the logic of Tetris with artificial intelligence (AI) and aviation navigation principles, TetrAI Nav offers an engaging and efficient approach to optimizing air traffic management.
 
